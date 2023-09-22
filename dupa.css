@@ -1,0 +1,28 @@
+body{
+    background-color: green;
+}
+div{
+    border: dotted;
+    border-color: pink;
+    background-image: url(marucha.jpg);
+    font-family: "Audiowide",sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.5cm;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: pink;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 50px pink;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar {
+    width: 20px;
+  }
+
+div:hover{
+    color:red;
+}
