@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+    <style>
+        #can {
+            border: 2px solid black;
+        }
+    </style>
+    <script src="scripts/draw-ellipse.js"></script>
+</head>
+<body>
+<div id ="elem"></div>
+<canvas id = "can" width="1000" height="1000"></canvas>
+<script>
+    var canvas = document.getElementById('can');
+    var ctx = canvas.getContext('2d');
+
+    ctx.fillStyle="#3366FF";
+    ctx.strokeStyle="black";
+    ctx.lineWidth="3";
+    ctx.save();
+    //sun
+    ctx.beginPath();
+    ctx.fillStyle="yellow";
+    ctx.arc(500, 75, 50, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.stroke();
+
+    //roof
+    ctx.fillStyle="green";
+    ctx.beginPath();
+    ctx.moveTo(50,260);
+    ctx.lineTo(200,180);
+    ctx.lineTo(550,260);
+    ctx.closePath();
+    ctx.fill();
+    ctx.strokeStyle = "green";
+    ctx.stroke();
+    ctx.fillStyle="green";
+    ctx.beginPath();
+    ctx.moveTo(550,260);
+    ctx.lineTo(400,181);
+    ctx.lineTo(210,182);
+    ctx.closePath();
+    ctx.fill();
+    ctx.strokeStyle = "green";
+    ctx.stroke();
+
+    ctx.fillStyle="green";
+    ctx.beginPath();
+    ctx.restore();
+    ctx.moveTo(50,260);
+    ctx.lineTo(550,260);
+    ctx.moveTo(550,260);
+    ctx.lineTo(400,180);
+    ctx.moveTo(50,260);
+    ctx.lineTo(200,180);
+    ctx.moveTo(200,180);
+    ctx.lineTo(400,180);
+    ctx.stroke();
+    ctx.beginPath();
+
+    // house walls
+    ctx.fillRect(100, 260, 400, 500);
+    ctx.strokeRect(100, 260, 400, 500);
+
+    // windows
+    ctx.fillStyle="white";
+    ctx.fillRect(130, 275, 70, 45);
+    ctx.fillRect(205, 275, 70, 45);
+    ctx.fillRect(130, 325, 70, 45);
+    ctx.fillRect(205, 325, 70, 45);
+
+    ctx.fillRect(325, 275, 70, 45);
+    ctx.fillRect(400, 275, 70, 45);
+    ctx.fillRect(325, 325, 70, 45);
+    ctx.fillRect(400, 325, 70, 45);
+
+    ctx.fillRect(325, 400, 70, 45);
+    ctx.fillRect(400, 400, 70, 45);
+    ctx.fillRect(325, 450, 70, 45);
+    ctx.fillRect(400, 450, 70, 45);
+    
+    ctx.fillRect(130, 400, 70, 45);
+    ctx.fillRect(205, 400, 70, 45);
+    ctx.fillRect(130, 450, 70, 45);
+    ctx.fillRect(205, 450, 70, 45);
+
+    ctx.fillRect(130, 525, 70, 45);
+    ctx.fillRect(205, 525, 70, 45);
+    ctx.fillRect(130, 575, 70, 45);
+    ctx.fillRect(205, 575, 70, 45);
+
+    ctx.fillRect(325, 525, 70, 45);
+    ctx.fillRect(400, 525, 70, 45);
+    ctx.fillRect(325, 575, 70, 45);
+    ctx.fillRect(400, 575, 70, 45);
+
+    // door lines
+    ctx.fillStyle="white";
+    ctx.fillRect(240,633,120,125);
+    ctx.beginPath();
+    ctx.restore();
+    ctx.lineTo(300,760);
+    ctx.moveTo(240,633);
+    ctx.lineTo(240,760);
+    ctx.moveTo(360,634);
+    ctx.lineTo(360,760);
+    ctx.moveTo(361,633);
+    ctx.lineTo(239,633);
+    ctx.strokeStyle = "#FF6699";
+    ctx.stroke();
+    ctx.beginPath();
+    
+    //ctx.arc(199,562,140,1.355*Math.PI,1.65*Math.PI); // door arc
+    ctx.stroke();
+
+    // door handles
+    ctx.beginPath();
+    ctx.moveTo(345,700);
+    ctx.lineTo(320,700);
+    ctx.moveTo(345,700);
+    ctx.lineTo(345,725);
+    //ctx.arc(215,510,5,0,2*Math.PI);
+    ctx.stroke();
+
+    
+</script>
+</body>
+</html>
